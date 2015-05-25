@@ -1,7 +1,6 @@
 package de.testing.services.impl;
 
-import de.testing.dtos.Country;
-import org.junit.Before;
+import de.testing.dtos.CountryDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -19,7 +18,7 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class CountryServiceImplTest {
 
-    private static final Country GERMANY = new Country("DE", "Germany", Locale.GERMANY);
+    private static final CountryDto GERMANY = new CountryDto("DE", "Germany", Locale.GERMANY);
     private CountryServiceImpl countryService = new CountryServiceImpl();
 
     @Parameter
@@ -27,17 +26,17 @@ public class CountryServiceImplTest {
     @Parameter(1)
     public String inputName;
     @Parameter(2)
-    public Country expected;
+    public CountryDto expected;
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {"IT", "Italy", new Country("IT", "Italy", ITALY)},
+                {"IT", "Italy", new CountryDto("IT", "Italy", ITALY)},
                 {"DE", "Germany", GERMANY},
                 {"de", "Germany", GERMANY},
                 {"FR", "France", GERMANY},
-                {"US", "USA", new Country("US", "USA", US)},
-                {"CN", "China", new Country("CN", "China", CHINA)},
-                {"JP", "Japan", new Country("JP", "Japan", JAPAN)}
+                {"US", "USA", new CountryDto("US", "USA", US)},
+                {"CN", "China", new CountryDto("CN", "China", CHINA)},
+                {"JP", "Japan", new CountryDto("JP", "Japan", JAPAN)}
         });
     }
 

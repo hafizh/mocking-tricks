@@ -1,13 +1,13 @@
 package de.testing.services;
 
-import de.testing.dtos.Country;
+import de.testing.dtos.CountryDto;
 
 /**
  * Created by hhasanov on 25/05/15.
  */
 public interface CountryService {
 
-    public Country getCountryByCode(String countryCode);
+    public CountryDto getCountryByCode(String countryCode);
 
-    public Country getCountryByName(String countryName);
+    public CountryDto getCountryByName(String countryName);
 }
